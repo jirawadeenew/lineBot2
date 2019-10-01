@@ -22,13 +22,13 @@ def callback():
     decoded = json.loads(json_line)
     user = decoded["events"][0]['replyToken']
     userText = decoded["events"][0]['message']['text']
-     if (userText == 'สวัสดี') :
+    if (userText == 'สวัสดี') :
        sendText(user,'ดีด้วยจ้า')
-     elif (userText == 'ไปละ') :
+    elif (userText == 'ไปละ') :
         sendText(user,'บาย')
-     else :
+    else :
         sendText(user,'ว่าอะไรคะ')
-     return '',200
+    return '',200
 
 def sendText(user, text):
   LINE_API = 'https://api.line.me/v2/bot/message/reply'
